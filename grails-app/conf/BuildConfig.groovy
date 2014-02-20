@@ -12,6 +12,7 @@ grails.tomcat.nio = true
 //   run: [maxMemory:1024, minMemory:64, debug:false, maxPerm:256]
 //]
 
+grails.project.dependency.resolver = "maven"
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -46,11 +47,11 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
         // runtime 'mysql:mysql-connector-java:5.1.22'
+        compile "net.sf.ehcache:ehcache-core:2.4.6"
     }
 
     plugins {
-        //runtime ":hibernate:$grailsVersion"
-		runtime ":mongodb:1.2.0"
+        compile ":mongodb:1.3.1"
         runtime ":jquery:1.8.3"
         runtime ":resources:1.2"
 		runtime ':twitter-bootstrap:2.3.2'
@@ -61,11 +62,16 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.0"
         //runtime ":yui-minify-resources:0.1.5"
 
-        build ":tomcat:$grailsVersion"
-		runtime (":events-push:1.0.M7")
+//        build ":tomcat:$grailsVersion"
+        build ":tomcat:7.0.50.1"
+
+        compile ":platform-core:1.0.RC6"
+        runtime ":events-push:1.0.M7"
 
         //runtime ":database-migration:1.3.2"
 
-        compile ':cache:1.0.1'
+//        compile ':cache:1.0.1'
+        compile ":cache:1.1.1"
+//        compile ":cache-ehcache:1.0.0"
     }
 }
