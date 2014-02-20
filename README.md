@@ -1,3 +1,5 @@
+*This is fork is meant to make this example compatible with Grails 2.3.6.
+
 Grails Chatroom App
 ==========================
 
